@@ -222,11 +222,13 @@ $(function() {
             dataType:'json',
             success:function(data){
                 console.log(data);
+                console.log('数据11111111111111')
                 if (data.success == true) {
                     var href = data.access + '?exchange_token=' + data.exchange_token + '&href=' + window.location.href;
                     if (channel) {
                         href += '&channel=' + channel
                     }
+                    console.log(href, '地址')
                     window.location.href = href
                 }
             }

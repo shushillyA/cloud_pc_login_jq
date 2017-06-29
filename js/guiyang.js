@@ -12,4 +12,4 @@
     $('.copyright').html(html)
   }
 })(window.location.href,'guiyang')
-// })('guiyang.')
+// })('guiyang.', 'guiyang')

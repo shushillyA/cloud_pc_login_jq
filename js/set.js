@@ -101,8 +101,11 @@ $(function() {
             dataType:'json',
             success:function(data){
                 console.log(data);
+                console.log('进入11111111111')
                 if (data.success == true) {
-                    window.location.href = data.access + '?exchange_token=' + data.exchange_token + '&href=' + window.location.href;
+                    var href = data.access + '?exchange_token=' + data.exchange_token + '&href=' + window.location.href;
+                    console.log(href, '地址')
+                    window.location.href = href;
                 }else if (data.error.fields.token) {
                     layer.msg('登录超时或已退出，请重新登录');
                     // 返回登录页
