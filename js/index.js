@@ -223,7 +223,11 @@ $(function() {
             success:function(data){
                 console.log(data);
                 if (data.success == true) {
-                    window.location.href = data.access + '?exchange_token=' + data.exchange_token + '&channel=' + channel;
+                    var href = data.access + '?exchange_token=' + data.exchange_token + '&href=' + window.location.href;
+                    if (channel) {
+                        href += '&channel=' + channel
+                    }
+                    window.location.href = href
                 }
             }
         });

@@ -102,7 +102,7 @@ $(function() {
             success:function(data){
                 console.log(data);
                 if (data.success == true) {
-                    window.location.href = data.access + '?exchange_token=' + data.exchange_token;
+                    window.location.href = data.access + '?exchange_token=' + data.exchange_token + '&href=' + window.location.href;
                 }else if (data.error.fields.token) {
                     layer.msg('登录超时或已退出，请重新登录');
                     // 返回登录页
